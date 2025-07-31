@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <main>
         <h1 style={{ color: "#fff", textAlign: "center", marginTop: "4rem" }}>
-          Nervana One-Pager Coming Soon
+          Nervana Coming Soon
         </h1>
       </main>
     </>
