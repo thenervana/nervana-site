@@ -20,7 +20,6 @@ export default function Home() {
 
   useEffect(() => {
     if (currentIndex >= chatSequence.length) return;
-
     if (chatSequence[currentIndex]?.typing) {
       setShowTyping(true);
       const typingDelay = 1200;
@@ -141,6 +140,7 @@ export default function Home() {
                 className={`${styles.btn} ${styles.btnPrimaryHeader}`}
                 href="https://calendly.com/jay-thenervana/call"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Book a Call
               </a>
@@ -151,14 +151,23 @@ export default function Home() {
         <div className={styles.bannerOverlay}>
           <div className={styles.bannerTextBlock}>
             <div className={styles.bannerText}>
-              You just need to<span id="jackpotText" className={styles.jackpotEffect}><span id="typedWord">Script</span><span className={styles.cursor}></span></span>
+              You just need to
+              <span id="jackpotText" className={styles.jackpotEffect}>
+                <span id="typedWord">Script</span>
+                <span className={styles.cursor}></span>
+              </span>
             </div>
-            <h1 className={styles.heroHeading} style={{ fontSize: "3.2rem", textAlign: "center" }}>From Invisible to In Demand</h1>
-            <p className={styles.heroSubtext} style={{ fontSize: "1.3rem", textAlign: "center" }}>We help founders turn their content into a client acquisition machine.</p>
+            <h1 className={styles.heroHeading} style={{ fontSize: "3.2rem", textAlign: "center" }}>
+              From Invisible to In Demand
+            </h1>
+            <p className={styles.heroSubtext} style={{ fontSize: "1.3rem", textAlign: "center" }}>
+              We help founders turn their content into a client acquisition machine.
+            </p>
             <a
               className={`${styles.btn} ${styles.btnPrimaryMain}`}
               href="https://calendly.com/jay-thenervana/call"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Book a Discovery Call
             </a>
@@ -190,17 +199,16 @@ export default function Home() {
           }}
         >
           At Nervana, we help founders turn their Personal Brand into a client acquisition machine.
-          We typically work with growth-stage founders — already doing decently, but hitting a plateau with inbound growth.
+          We typically work with growth-stage founders &mdash; already doing decently, but hitting a plateau with inbound growth.
           Our Trust Magnet Framework fixes that.
-          We build you a sharp, founder-led content system that makes the right people follow, trust, and buy — before you even get on a sales call.
-          If inconsistent customer acquisition/retention is your bottleneck, you're a damn good fit for what we do.
+          We build you a sharp, founder-led content system that makes the right people follow, trust, and buy &mdash; before you even get on a sales call.
+          If inconsistent customer acquisition/retention is your bottleneck, you&apos;re a damn good fit for what we do.
         </p>
       </section>
 
       <section className={styles.chatLetterSection} style={{ position: "relative" }}>
         <div className={styles.chatContainer}>
           <div className={styles.chatHeader}>Chat with our Founder</div>
-          {/* Sweet rounded rectangle background */}
           <div
             className={styles.chatCardBg}
             style={{
@@ -218,8 +226,7 @@ export default function Home() {
               return (
                 <div
                   key={i + "msg"}
-                  className={`${styles.chatRow} ${msg.side === "left" ? styles.left : styles.right}`}
-                >
+                  className={`${styles.chatRow} ${msg.side === "left" ? styles.left : styles.right}`}>
                   <Image
                     src={msg.avatar}
                     alt={msg.alt}
@@ -233,9 +240,7 @@ export default function Home() {
             })}
             {showTyping && currentIndex < chatSequence.length && (
               <div
-                className={`${styles.chatRow} ${chatSequence[currentIndex].side === "left" ? styles.left : styles.right
-                  }`}
-              >
+                className={`${styles.chatRow} ${chatSequence[currentIndex].side === "left" ? styles.left : styles.right}`}>
                 <Image
                   src={chatSequence[currentIndex].avatar}
                   alt={chatSequence[currentIndex].alt}
@@ -261,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div style={{ height: "56px" }} />{/* Space after chat */}
+      <div style={{ height: "56px" }} />
       <div
         style={{
           display: "flex",
@@ -281,7 +286,9 @@ export default function Home() {
             boxShadow: "0 3px 32px #1aeab540",
             textAlign: "center"
           }}
-        >What are you still waiting for?</div>
+        >
+          What are you still waiting for?
+        </div>
       </div>
 
       <main id="main-content">
@@ -346,7 +353,7 @@ export default function Home() {
           id="success"
           className={`${styles.section} ${styles.container} ${styles.animate}`}
         >
-          <h2 className={styles.center}>We’ve Done the Damn Thing</h2>
+          <h2 className={styles.center}>We&apos;ve Done the Damn Thing</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
               <h3>Tandoor Vadapav</h3>
@@ -358,7 +365,7 @@ export default function Home() {
             <div className={styles.card}>
               <h3>Real-Content Marketing</h3>
               <p>
-                Revamped a legacy brand’s digital front—cut lead costs and built
+                Revamped a legacy brand&apos;s digital front—cut lead costs and built
                 mainstream credibility.
               </p>
             </div>
@@ -388,10 +395,12 @@ export default function Home() {
               <div className={styles.galleryClip}>
                 <div className={styles.galleryScroll} id="gallery">
                   {Array.from({ length: 16 }).map((_, i) => (
-                    <img
+                    <Image
                       key={i}
                       src={`/SS${i + 1}.png`}
                       alt={`Success story ${i + 1}`}
+                      width={360}
+                      height={200}
                       loading="lazy"
                     />
                   ))}
@@ -415,6 +424,7 @@ export default function Home() {
             className={`${styles.btn} ${styles.btnPrimary}`}
             href="https://calendly.com/jay-thenervana/call"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Book Your Call
           </a>
