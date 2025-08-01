@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 
 const chatSequence = [
   { side: "left", avatar: "/founder.JPG", alt: "Jay Gogad", text: "Hey, John", typing: true },
-  { side: "right", avatar: "/client.png", alt: "Client", text: "Building a brand is overwhelming. I&apos;ve been stuck.", typing: true },
+  { side: "right", avatar: "/client.png", alt: "Client", text: "Building a brand is overwhelming. I have been stuck.", typing: true },
   { side: "left", avatar: "/founder.JPG", alt: "Founder", text: "I know it is, so I built Nervana to simplify the process.", typing: true },
   { side: "right", avatar: "/client.png", alt: "Client", text: "Idk where to begin :(", typing: true },
   { side: "left", avatar: "/founder.JPG", alt: "Founder", text: "Start with booking a call with us.", typing: true },
