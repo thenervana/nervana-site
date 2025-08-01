@@ -337,7 +337,14 @@ export default function Home() {
               <div className={styles.galleryClip}>
                 <div className={styles.galleryScroll} id="gallery">
                   {[...Array(16)].map((_, i) => (
-                    <Image key={i} src={`/SS${i + 1}.png`} alt={`Success story ${i + 1}`} width={360} height={200} loading="lazy" />
+                    <Image
+                      key={i}
+                      src={`/SS${i + 1}.png`}
+                      alt={`Success story ${i + 1}`}
+                      width={360}
+                      height={200}
+                      loading="lazy"
+                    />
                   ))}
                 </div>
               </div>
@@ -348,7 +355,9 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.center} ${styles.container} ${styles.animate}`}>
           <h2>Turn your content into your strongest sales asset</h2>
-          <a className={`${styles.btn} ${styles.btnPrimary}`} href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer">Book Your Call</a>
+          <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimary}`}>
+            Book Your Call
+          </Link>
         </section>
       </main>
 
