@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 
 const chatSequence = [
   { side: "left", avatar: "/founder.jpg", alt: "Jay Gogad", text: "Hey, John", typing: true },
-  { side: "right", avatar: "/client.png", alt: "Client", text: "Building a brand is overwhelming. I’ve been stuck.", typing: true },
+  { side: "right", avatar: "/client.png", alt: "Client", text: "Building a brand is overwhelming. I&apos;ve been stuck.", typing: true },
   { side: "left", avatar: "/founder.jpg", alt: "Founder", text: "I know it is, so I built Nervana to simplify the process.", typing: true },
   { side: "right", avatar: "/client.png", alt: "Client", text: "Idk where to begin :(", typing: true },
   { side: "left", avatar: "/founder.jpg", alt: "Founder", text: "Start with booking a call with us.", typing: true },
@@ -20,6 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     if (currentIndex >= chatSequence.length) return;
+
     if (chatSequence[currentIndex]?.typing) {
       setShowTyping(true);
       const typingDelay = 1200;
@@ -121,6 +122,7 @@ export default function Home() {
           className={styles.bannerImage}
           width={1920}
           height={1080}
+          priority
         />
         <div className={styles.bannerGradient}></div>
 
@@ -136,14 +138,14 @@ export default function Home() {
               <a href="#work">Work</a>
               <a href="#framework">Framework</a>
               <a href="#success">Success</a>
-              <a
-                className={`${styles.btn} ${styles.btnPrimaryHeader}`}
+              <Link
                 href="https://calendly.com/jay-thenervana/call"
                 target="_blank"
                 rel="noopener noreferrer"
+                className={`${styles.btn} ${styles.btnPrimaryHeader}`}
               >
                 Book a Call
-              </a>
+              </Link>
             </nav>
           </div>
         </header>
@@ -151,11 +153,11 @@ export default function Home() {
         <div className={styles.bannerOverlay}>
           <div className={styles.bannerTextBlock}>
             <div className={styles.bannerText}>
-              You just need to
-              <span id="jackpotText" className={styles.jackpotEffect}>
-                <span id="typedWord">Script</span>
-                <span className={styles.cursor}></span>
+              You just need to{" "}
+              <span id="jackpotText" className={styles.jackpotEffect} aria-live="polite" aria-atomic="true">
+                Script
               </span>
+              <span className={styles.cursor}></span>
             </div>
             <h1 className={styles.heroHeading} style={{ fontSize: "3.2rem", textAlign: "center" }}>
               From Invisible to In Demand
@@ -163,28 +165,20 @@ export default function Home() {
             <p className={styles.heroSubtext} style={{ fontSize: "1.3rem", textAlign: "center" }}>
               We help founders turn their content into a client acquisition machine.
             </p>
-            <a
-              className={`${styles.btn} ${styles.btnPrimaryMain}`}
-              href="https://calendly.com/jay-thenervana/call"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimaryMain}`}>
               Book a Discovery Call
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
-      <section
-        id="about"
-        className={`${styles.section} ${styles.container} ${styles.animate}`}
-      >
+      <section id="about" className={`${styles.section} ${styles.container} ${styles.animate}`}>
         <h2
           className={styles.center}
           style={{
             fontSize: "2.5rem",
             marginBottom: "1rem",
-            color: "#fff",
+            color: "#fff"
           }}
         >
           About Nervana
@@ -195,13 +189,11 @@ export default function Home() {
             margin: "0 auto",
             fontSize: "1.25rem",
             lineHeight: "1.8",
-            color: "#ccc",
+            color: "#ccc"
           }}
         >
-          At Nervana, we help founders turn their Personal Brand into a client acquisition machine.
-          We typically work with growth-stage founders &mdash; already doing decently, but hitting a plateau with inbound growth.
-          Our Trust Magnet Framework fixes that.
-          We build you a sharp, founder-led content system that makes the right people follow, trust, and buy &mdash; before you even get on a sales call.
+          At Nervana, we help founders turn their Personal Brand into a client acquisition machine. We typically work with growth-stage founders &mdash; already doing decently, but hitting a plateau with inbound growth.
+          Our Trust Magnet Framework fixes that. We build you a sharp, founder-led content system that makes the right people follow, trust, and buy &mdash; before you even get on a sales call.
           If inconsistent customer acquisition/retention is your bottleneck, you&apos;re a damn good fit for what we do.
         </p>
       </section>
@@ -221,12 +213,9 @@ export default function Home() {
             }}
           >
             {chatSequence.map((msg, i) => {
-              const isActive = i < currentIndex;
-              if (!isActive) return null;
+              if (i >= currentIndex) return null;
               return (
-                <div
-                  key={i + "msg"}
-                  className={`${styles.chatRow} ${msg.side === "left" ? styles.left : styles.right}`}>
+                <div key={i} className={`${styles.chatRow} ${msg.side === "left" ? styles.left : styles.right}`}>
                   <Image
                     src={msg.avatar}
                     alt={msg.alt}
@@ -239,18 +228,13 @@ export default function Home() {
               );
             })}
             {showTyping && currentIndex < chatSequence.length && (
-              <div
-                className={`${styles.chatRow} ${chatSequence[currentIndex].side === "left" ? styles.left : styles.right}`}>
+              <div className={`${styles.chatRow} ${chatSequence[currentIndex].side === "left" ? styles.left : styles.right}`}>
                 <Image
                   src={chatSequence[currentIndex].avatar}
                   alt={chatSequence[currentIndex].alt}
                   width={36}
                   height={36}
-                  className={
-                    chatSequence[currentIndex].side === "left"
-                      ? styles.leftAvatar
-                      : styles.rightAvatar
-                  }
+                  className={chatSequence[currentIndex].side === "left" ? styles.leftAvatar : styles.rightAvatar}
                 />
                 <div className={styles.chatTyping}>
                   <span></span>
@@ -259,20 +243,18 @@ export default function Home() {
                 </div>
               </div>
             )}
-            {currentIndex >= chatSequence.length && (
-              <div className={styles.chatSeen}>Seen ✔</div>
-            )}
+            {currentIndex >= chatSequence.length && <div className={styles.chatSeen}>Seen ✔</div>}
           </div>
         </div>
       </section>
 
-      <div style={{ height: "56px" }} />
+      <div style={{ height: 56 }} />
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: "40px"
+          marginBottom: 40
         }}
       >
         <div
@@ -284,7 +266,7 @@ export default function Home() {
             fontSize: "1.6rem",
             borderRadius: "1.2em",
             boxShadow: "0 3px 32px #1aeab540",
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           What are you still waiting for?
@@ -292,153 +274,87 @@ export default function Home() {
       </div>
 
       <main id="main-content">
-        <section
-          id="work"
-          className={`${styles.section} ${styles.container} ${styles.animate}`}
-        >
+        <section id="work" className={`${styles.section} ${styles.container} ${styles.animate}`}>
           <h2 className={styles.center}>Are you one of these?</h2>
           <ul className={styles.cards}>
             <li className={styles.card}>
               <h3>₹5L–₹15L/mo Founders</h3>
-              <p>
-                Growth-stage founders hitting a plateau with inbound growth.
-              </p>
+              <p>Growth-stage founders hitting a plateau with inbound growth.</p>
             </li>
             <li className={styles.card}>
               <h3>Coaches & Consultants</h3>
-              <p>
-                Experts tired of chasing leads and ready to be in demand.
-              </p>
+              <p>Experts tired of chasing leads and ready to be in demand.</p>
             </li>
             <li className={styles.card}>
               <h3>SaaS Founders</h3>
-              <p>
-                Operators stuck in referral loops, seeking consistent inbound.
-              </p>
+              <p>Operators stuck in referral loops, seeking consistent inbound.</p>
             </li>
           </ul>
         </section>
 
-        <section
-          id="framework"
-          className={`${styles.section} ${styles.container} ${styles.animate}`}
-        >
+        <section id="framework" className={`${styles.section} ${styles.container} ${styles.animate}`}>
           <h2 className={styles.center}>The Trust Magnet Framework</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
               <h3>Positioning</h3>
-              <p>
-                Carve a brand around your sharpest insight and personal
-                edge—stand out in the noise.
-              </p>
+              <p>Carve a brand around your sharpest insight and personal edge—stand out in the noise.</p>
             </div>
             <div className={styles.card}>
               <h3>Structure</h3>
-              <p>
-                Build systems that turn attention into trust, and trust into
-                revenue.
-              </p>
+              <p>Build systems that turn attention into trust, and trust into revenue.</p>
             </div>
             <div className={styles.card}>
               <h3>Consistency</h3>
-              <p>
-                Systemize storytelling calendars, content pipelines, and
-                publishing for reliable performance.
-              </p>
+              <p>Systemize storytelling calendars, content pipelines, and publishing for reliable performance.</p>
             </div>
           </div>
         </section>
 
-        <section
-          id="success"
-          className={`${styles.section} ${styles.container} ${styles.animate}`}
-        >
+        <section id="success" className={`${styles.section} ${styles.container} ${styles.animate}`}>
           <h2 className={styles.center}>We&apos;ve Done the Damn Thing</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
               <h3>Tandoor Vadapav</h3>
-              <p>
-                Turned offline retention into online attraction—footfall surged
-                with organic storytelling.
-              </p>
+              <p>Turned offline retention into online attraction—footfall surged with organic storytelling.</p>
             </div>
             <div className={styles.card}>
               <h3>Real-Content Marketing</h3>
-              <p>
-                Revamped a legacy brand&apos;s digital front—cut lead costs and built
-                mainstream credibility.
-              </p>
+              <p>Revamped a legacy brand&apos;s digital front—cut lead costs and built mainstream credibility.</p>
             </div>
             <div className={styles.card}>
               <h3>Krish</h3>
-              <p>
-                Scaled a personal brand to 44K followers, primed for deeper,
-                long-form content success.
-              </p>
+              <p>Scaled a personal brand to 44K followers, primed for deeper, long-form content success.</p>
             </div>
           </div>
 
           <div className={styles.section}>
             <h2 className={styles.center}>Success Stories</h2>
             <p className={styles.center}>
-              A snapshot of our real-world results — millions of organic views,
-              viral content, and brands that became internet favorites. All
-              built from scratch with strategy, soul, and zero paid ads.
+              A snapshot of our real-world results — millions of organic views, viral content, and brands that became internet favorites. All built from scratch with strategy, soul, and zero paid ads.
             </p>
             <div className={styles.galleryWrapper}>
-              <button
-                className={`${styles.galleryArrow} ${styles.left}`}
-                onClick={() => scrollGallery(-300)}
-              >
-                &lt;
-              </button>
+              <button className={`${styles.galleryArrow} ${styles.left}`} onClick={() => scrollGallery(-300)}>&lt;</button>
               <div className={styles.galleryClip}>
                 <div className={styles.galleryScroll} id="gallery">
-                  {Array.from({ length: 16 }).map((_, i) => (
-                    <Image
-                      key={i}
-                      src={`/SS${i + 1}.png`}
-                      alt={`Success story ${i + 1}`}
-                      width={360}
-                      height={200}
-                      loading="lazy"
-                    />
+                  {[...Array(16)].map((_, i) => (
+                    <Image key={i} src={`/SS${i + 1}.png`} alt={`Success story ${i + 1}`} width={360} height={200} loading="lazy" />
                   ))}
                 </div>
               </div>
-              <button
-                className={`${styles.galleryArrow} ${styles.right}`}
-                onClick={() => scrollGallery(300)}
-              >
-                &gt;
-              </button>
+              <button className={`${styles.galleryArrow} ${styles.right}`} onClick={() => scrollGallery(300)}>&gt;</button>
             </div>
           </div>
         </section>
 
-        <section
-          className={`${styles.section} ${styles.center} ${styles.container} ${styles.animate}`}
-        >
+        <section className={`${styles.section} ${styles.center} ${styles.container} ${styles.animate}`}>
           <h2>Turn your content into your strongest sales asset</h2>
-          <a
-            className={`${styles.btn} ${styles.btnPrimary}`}
-            href="https://calendly.com/jay-thenervana/call"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Your Call
-          </a>
+          <a className={`${styles.btn} ${styles.btnPrimary}`} href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer">Book Your Call</a>
         </section>
       </main>
 
       <footer className={`${styles.footer} ${styles.center}`}>
-        <p>
-          Email: <a href="mailto:hello@thenervana.com">hello@thenervana.com</a> |
-          Phone: <a href="tel:+917385652766">+91 738 565 2766</a>
-        </p>
-        <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "#666" }}>
-          Full site launching soon.
-        </p>
+        <p>Email: <a href="mailto:hello@thenervana.com">hello@thenervana.com</a> | Phone: <a href="tel:+917385652766">+91 738 565 2766</a></p>
+        <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "#666" }}>Full site launching soon.</p>
       </footer>
     </>
   );
