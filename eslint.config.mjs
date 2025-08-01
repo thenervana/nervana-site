@@ -1,3 +1,4 @@
+// eslint.config.mjs
 import { FlatCompat } from "@eslint/eslintrc";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -14,7 +15,7 @@ export default [
   {
     rules: {
       "react/no-unescaped-entities": "off",
-      "@next/next/no-img-element": "off"
-    }
-  }
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
