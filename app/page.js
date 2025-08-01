@@ -164,7 +164,12 @@ export default function Home() {
             <p className={styles.heroSubtext} style={{ fontSize: "1.3rem", textAlign: "center" }}>
               We help founders turn their content into a client acquisition machine.
             </p>
-            <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimaryMain}`}>
+            <Link
+              href="https://calendly.com/jay-thenervana/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.btn} ${styles.btnPrimaryMain}`}
+            >
               Book a Discovery Call
             </Link>
           </div>
@@ -361,7 +366,9 @@ export default function Home() {
       </main>
 
       <footer className={`${styles.footer} ${styles.center}`}>
-        <p>Email: <a href="mailto:hello@thenervana.com">hello@thenervana.com</a> | Phone: <a href="tel:+917385652766">+91 738 565 2766</a></p>
+        <p>
+          Email: <a href="mailto:hello@thenervana.com">hello@thenervana.com</a> | Phone: <a href="tel:+917385652766">+91 738 565 2766</a>
+        </p>
         <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "#666" }}>Full site launching soon.</p>
       </footer>
     </>
