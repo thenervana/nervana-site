@@ -1,0 +1,489 @@
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.bannerTextBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.btnPrimaryHeader {
+  background-color: transparent;
+  color: #00ffb3;
+  border: 2px solid #00ffb3;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btnPrimaryHeader:hover {
+  background-color: transparent;
+  color: #0a0a0a;
+  transform: scale(0.96);
+}
+
+.btnPrimaryMain {
+  background-color: #00562c;
+  color: #f9f4ea;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btnPrimaryMain:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.navHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  padding: 0rem 1rem 0rem 1rem;
+  background: transparent;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.headerScrolled {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-museo-moderno), cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f9f4ea;
+}
+
+.logo {
+  font-family: 'MuseoModerno', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f9f4ea;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-weight: 500;
+}
+
+.menu a {
+  color: #eee;
+  font-size: 1rem;
+  transition: color 0.3s;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.menu a:hover {
+  color: #00ffb3;
+}
+
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bannerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.bannerGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 9, 30, 0.98) 0%,
+    rgba(20, 23, 36, 0.8) 14%,
+    rgba(11, 12, 18, 0.6) 40%,
+    rgba(10, 10, 12, 0.18) 72%,
+    rgba(0, 0, 0, 0.03) 95%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.8s;
+}
+
+.inlineBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bannerText {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-top: -4rem;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 3px 32px rgba(22, 25, 41, 0.45), 0 1px 1px #0089ff40;
+  letter-spacing: 0.018em;
+  pointer-events: auto;
+}
+
+.jackpotEffect {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 3px 32px rgba(22, 25, 41, 0.45), 0 1px 1px #0089ff40;
+  letter-spacing: 0.018em;
+  margin-left: 0.75rem;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+.jackpotEffect::after {
+  content: "|";
+  animation: blink 0.75s step-end infinite;
+  color: #00ffb3;
+  margin-left: 2px;
+  font-weight: 150;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.chatLetterSection {
+  padding: 4rem 1rem;
+  background: #121212;
+  color: white;
+}
+
+.chatContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chatHeader {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #00ffb3;
+}
+.chatRow {
+  display: flex;
+  align-items: center;      /* Vertically center avatar & bubble */
+  justify-content: center;  /* Horizontally center as a group */
+  gap: 0.5rem;
+  width: 100%;              /* Take full row width */
+  margin-bottom: 1rem;
+}
+
+.chatRow.left {
+  flex-direction: row;
+  justify-content: left;
+}
+
+.chatRow.right {
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+
+.rightAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  align-items: right;
+}
+
+.leftAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  align-items: left;
+}
+
+.chatRow.left .avatar {
+  order: 1;
+}
+
+.chatRow.right .avatar {
+  order: 2;
+}
+
+.chatBubble {
+  background: #2a2a2a;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  max-width: 75%;
+  font-size: 1rem;
+  display: inline-block;
+}
+.chatRow.left .chatBubble {
+  background-color: #00ffb3;
+  color: #000;
+  
+}
+
+.chatRow.right .chatBubble {
+  background-color: #222;
+  color: #eee;
+}
+
+.chatTyping {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: 3.5rem;
+}
+
+.chatTyping span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 2px;
+  background: #ccc;
+  border-radius: 50%;
+  animation: blink 1s infinite ease-in-out;
+}
+.chatTyping span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.chatTyping span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.chatSeen {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section {
+  padding: 4rem 0;
+}
+
+.hero {
+  padding-top: 100px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #111;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #167a5f;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+.galleryWrapper {
+  position: relative;
+  overflow: visible;
+  margin: 0;
+}
+
+.galleryClip {
+  overflow: hidden;
+  padding: 0 60px;
+}
+
+.galleryScroll {
+  display: flex;
+  white-space: nowrap;
+  gap: 1rem;
+  animation: scroll-left 60s linear infinite;
+}
+
+.galleryScroll:hover {
+  animation-play-state: paused;
+}
+
+.galleryScroll img {
+  height: 200px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.galleryArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 10, 10, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
+
+.footer {
+  background: #111;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s, transform 1s;
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .bannerWrapper {
+    height: 320px;
+    min-height: 180px;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bannerWrapper {
+    height: 170px;
+    min-height: 120px;
+  }
+
+  .bannerText {
+    font-size: 1rem;
+  }
+
+  .jackpotEffect {
+    font-weight: 500;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1.2em;
+  background-color: #fff;
+  margin-left: 4px;
+  animation: blink 0.8s steps(2, start) infinite;
+  position: absolute;
+  bottom: 0;
+}
