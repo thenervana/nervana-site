@@ -20,7 +20,6 @@ export default function Home() {
 
   useEffect(() => {
     if (currentIndex >= chatSequence.length) return;
-
     if (chatSequence[currentIndex]?.typing) {
       setShowTyping(true);
       const typingDelay = 1200;
