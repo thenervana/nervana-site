@@ -152,7 +152,7 @@ export default function Home() {
         <div className={styles.bannerOverlay}>
           <div className={styles.bannerTextBlock}>
             <div className={styles.bannerText}>
-              You just need to{" "}
+              You just need to{""}
               <span id="jackpotText" className={styles.jackpotEffect} aria-live="polite" aria-atomic="true">
                 Script
               </span>
@@ -358,39 +358,38 @@ export default function Home() {
           </div>
 
           <div className={styles.section}>
-            <h2 className={styles.center}>Success Stories</h2>
-            <p className={styles.center}>
-              A snapshot of our real-world results — millions of organic views, viral content, and brands that became internet favorites. All built from scratch with strategy, soul, and zero paid ads.
-            </p>
-            <div className={styles.galleryWrapper}>
-              <button className={`${styles.galleryArrow} ${styles.left}`} onClick={() => scrollGallery(-300)}>&lt;</button>
-              <div className={styles.galleryClip}>
-                <div className={styles.galleryScroll} id="gallery">
-                  {[...Array(16)].map((_, i) => (
-                    <Image
-                      key={i}
-                      src={`/SS${i + 1}.png`}
-                      alt={`Success story ${i + 1}`}
-                      width={360}
-                      height={200}
-                      loading="lazy"
-                    />
-                  ))}
-                </div>
-              </div>
-              <button className={`${styles.galleryArrow} ${styles.right}`} onClick={() => scrollGallery(300)}>&gt;</button>
-            </div>
-          </div>
+  <h2 className={`${styles.center} ${styles.container} ${styles.animate}`}>Success Stories</h2>
+  <p className={`${styles.container} ${styles.animate}`}>
+    A snapshot of our real-world results — millions of organic views, viral content, and brands that became internet favorites. All built from scratch with strategy, soul, and zero paid ads.</p> 
+    &nbsp;
+
+  <div className={styles.galleryWrapper}>
+    <div className={styles.galleryClip}>
+      <div className={styles.galleryScroll} id="gallery">
+        {[...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16), ...Array(16)].map((_, i) => (
+          <Image
+            key={i}
+            src={`/SS${(i % 16) + 1}.png`}
+            alt={`Success story ${(i % 16) + 1}`}
+            width={360}
+            height={200}
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
         </section>
 
-        <section className={`${styles.section} ${styles.center} ${styles.container} ${styles.animate}`}>
-          <h2>Turn your content into your strongest sales asset</h2>
+        <section className={`${styles.footerSection} ${styles.center} ${styles.animate}`}>
+          <h1>Turn your content into your strongest sales asset</h1>
           <Link
             href="https://calendly.com/jay-thenervana/call"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.btn} ${styles.btnPrimary}`}
-          >
+            className={`${styles.btn} ${styles.btnPrimaryMain}`}
+            style={{ marginTop: "4rem" }}                   > 
             Book Your Call
           </Link>
         </section>
@@ -400,7 +399,7 @@ export default function Home() {
         <p>
           Email: <a href="mailto:hello@thenervana.com">hello@thenervana.com</a> | Phone: <a href="tel:+917385652766">+91 738 565 2766</a>
         </p>
-        <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "#666" }}>Full site launching soon.</p>
+        <p style={{ marginTop: "1rem", fontSize: "0.8rem", color: "#666" }}> 2025 Copyright The Nervana Co.</p>
       </footer>
     </>
   );
