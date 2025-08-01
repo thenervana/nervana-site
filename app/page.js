@@ -133,10 +133,10 @@ export default function Home() {
               </Link>
             </div>
             <nav className={styles.menu} aria-label="Site navigation">
-              <a href="#hero">Home</a>
-              <a href="#work">Work</a>
-              <a href="#framework">Framework</a>
-              <a href="#success">Success</a>
+              <Link href="#hero">Home</Link>
+              <Link href="#work">Work</Link>
+              <Link href="#framework">Framework</Link>
+              <Link href="#success">Success</Link>
               <Link
                 href="https://calendly.com/jay-thenervana/call"
                 target="_blank"
@@ -164,12 +164,7 @@ export default function Home() {
             <p className={styles.heroSubtext} style={{ fontSize: "1.3rem", textAlign: "center" }}>
               We help founders turn their content into a client acquisition machine.
             </p>
-            <Link
-              href="https://calendly.com/jay-thenervana/call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.btn} ${styles.btnPrimaryMain}`}
-            >
+            <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimaryMain}`}>
               Book a Discovery Call
             </Link>
           </div>
@@ -182,7 +177,7 @@ export default function Home() {
           style={{
             fontSize: "2.5rem",
             marginBottom: "1rem",
-            color: "#fff"
+            color: "#fff",
           }}
         >
           About Nervana
@@ -193,7 +188,7 @@ export default function Home() {
             margin: "0 auto",
             fontSize: "1.25rem",
             lineHeight: "1.8",
-            color: "#ccc"
+            color: "#ccc",
           }}
         >
           At Nervana, we help founders turn their Personal Brand into a client acquisition machine. We typically work with growth-stage founders &mdash; already doing decently, but hitting a plateau with inbound growth.
@@ -202,7 +197,10 @@ export default function Home() {
         </p>
       </section>
 
-      <section className={styles.chatLetterSection} style={{ position: "relative" }}>
+      <section
+        className={styles.chatLetterSection}
+        style={{ position: "relative" }}
+      >
         <div className={styles.chatContainer}>
           <div className={styles.chatHeader}>Chat with our Founder</div>
           <div
@@ -219,26 +217,43 @@ export default function Home() {
             {chatSequence.map((msg, i) => {
               if (i >= currentIndex) return null;
               return (
-                <div key={i} className={`${styles.chatRow} ${msg.side === "left" ? styles.left : styles.right}`}>
+                <div
+                  key={i}
+                  className={`${styles.chatRow} ${
+                    msg.side === "left" ? styles.left : styles.right
+                  }`}
+                >
                   <Image
                     src={msg.avatar}
                     alt={msg.alt}
                     width={36}
                     height={36}
-                    className={msg.side === "left" ? styles.leftAvatar : styles.rightAvatar}
+                    className={
+                      msg.side === "left" ? styles.leftAvatar : styles.rightAvatar
+                    }
                   />
                   <div className={styles.chatBubble}>{msg.text}</div>
                 </div>
               );
             })}
             {showTyping && currentIndex < chatSequence.length && (
-              <div className={`${styles.chatRow} ${chatSequence[currentIndex].side === "left" ? styles.left : styles.right}`}>
+              <div
+                className={`${styles.chatRow} ${
+                  chatSequence[currentIndex].side === "left"
+                    ? styles.left
+                    : styles.right
+                }`}
+              >
                 <Image
                   src={chatSequence[currentIndex].avatar}
                   alt={chatSequence[currentIndex].alt}
                   width={36}
                   height={36}
-                  className={chatSequence[currentIndex].side === "left" ? styles.leftAvatar : styles.rightAvatar}
+                  className={
+                    chatSequence[currentIndex].side === "left"
+                      ? styles.leftAvatar
+                      : styles.rightAvatar
+                  }
                 />
                 <div className={styles.chatTyping}>
                   <span></span>
@@ -247,7 +262,9 @@ export default function Home() {
                 </div>
               </div>
             )}
-            {currentIndex >= chatSequence.length && <div className={styles.chatSeen}>Seen ✔</div>}
+            {currentIndex >= chatSequence.length && (
+              <div className={styles.chatSeen}>Seen ✔</div>
+            )}
           </div>
         </div>
       </section>
@@ -258,7 +275,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: 40
+          marginBottom: 40,
         }}
       >
         <div
@@ -278,7 +295,10 @@ export default function Home() {
       </div>
 
       <main id="main-content">
-        <section id="work" className={`${styles.section} ${styles.container} ${styles.animate}`}>
+        <section
+          id="work"
+          className={`${styles.section} ${styles.container} ${styles.animate}`}
+        >
           <h2 className={styles.center}>Are you one of these?</h2>
           <ul className={styles.cards}>
             <li className={styles.card}>
@@ -296,7 +316,10 @@ export default function Home() {
           </ul>
         </section>
 
-        <section id="framework" className={`${styles.section} ${styles.container} ${styles.animate}`}>
+        <section
+          id="framework"
+          className={`${styles.section} ${styles.container} ${styles.animate}`}
+        >
           <h2 className={styles.center}>The Trust Magnet Framework</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
@@ -314,7 +337,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="success" className={`${styles.section} ${styles.container} ${styles.animate}`}>
+        <section
+          id="success"
+          className={`${styles.section} ${styles.container} ${styles.animate}`}
+        >
           <h2 className={styles.center}>We&apos;ve Done the Damn Thing</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
@@ -359,7 +385,12 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.center} ${styles.container} ${styles.animate}`}>
           <h2>Turn your content into your strongest sales asset</h2>
-          <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimary}`}>
+          <Link
+            href="https://calendly.com/jay-thenervana/call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.btn} ${styles.btnPrimary}`}
+          >
             Book Your Call
           </Link>
         </section>
