@@ -476,14 +476,3 @@
     padding: 2rem 0;
   }
 }
-
-.cursor {
-  display: inline-block;
-  width: 1px;
-  height: 1.2em;
-  background-color: #fff;
-  margin-left: 4px;
-  animation: blink 0.8s steps(2, start) infinite;
-  position: absolute;
-  bottom: 0;
-}
