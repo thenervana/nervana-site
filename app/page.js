@@ -362,7 +362,6 @@ export default function Home() {
   <p className={`${styles.container} ${styles.animate}`}>
     A snapshot of our real-world results — millions of organic views, viral content, and brands that became internet favorites. All built from scratch with strategy, soul, and zero paid ads.</p> 
     &nbsp;
-
   <div className={styles.galleryWrapper}>
     <div className={styles.galleryClip}>
       <div className={styles.galleryScroll} id="gallery">
