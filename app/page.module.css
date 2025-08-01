@@ -395,6 +395,9 @@
 
 .galleryScroll img {
   height: 200px;
+  width: auto; /* or fixed width for consistent layout */
+  object-fit: cover;
+  aspect-ratio: 9 / 16; /* assuming portrait video/images */
   border-radius: 8px;
   flex-shrink: 0;
 }
