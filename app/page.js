@@ -497,7 +497,7 @@ export default function Home() {
         </div>
         {/* Bottom Footer Bar */}
         <div className={styles.footerBar}>
-          <div>© 2024 Nervana. All rights reserved.</div>
+          <div>© 2025 Nervana. All rights reserved.</div>
           <div className={styles.footerLinksRow}>
             <span className={styles.footerLink}>Privacy Policy</span>
             <span className={styles.footerLink}>Terms of Service</span>
