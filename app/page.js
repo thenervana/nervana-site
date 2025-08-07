@@ -472,13 +472,22 @@ export default function Home() {
           <div className={styles.footerCol}>
             <div className={styles.footerTitle}>Contact</div>
             <div className={styles.footerContactItem}>
-              <span role="img" aria-label="Mail" style={{marginRight: 6}}>📧</span>
-              hello@thenervana.com
-            </div>
+  <span role="img" aria-label="Mail" style={{ marginRight: 6 }}>📧</span>
+  <a href="mailto:hello@thenervana.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+    hello@thenervana.com
+  </a>
+</div>
             <div className={styles.footerContactItem}>
-              <span role="img" aria-label="Phone" style={{marginRight: 6}}>📞</span>
-              +91 738 565 2766
-            </div>
+  <span role="img" aria-label="Phone" style={{ marginRight: 6 }}>📞</span>
+  <a
+    href="https://chat.whatsapp.com/JnfbWWNlmc3E2EzBz5TVZi?mode=ac_c"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', textDecoration: 'none' }}
+  >
+    +91 738 565 2766
+  </a>
+</div>
             <div className={styles.footerContactItem}>
               <span role="img" aria-label="Location" style={{marginRight: 6}}>📍</span>
               Mumbai, India - 400104
