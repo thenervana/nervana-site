@@ -160,7 +160,7 @@ export default function Home() {
         <div className={styles.bannerOverlay}>
           <div className={styles.bannerTextBlock}>
             <div className={styles.bannerText}>
-              You just need to{" "}
+              You just need to{""}
               <span id="jackpotText" className={styles.jackpotEffect} aria-live="polite" aria-atomic="true">
                 Script
               </span>
