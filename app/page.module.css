@@ -801,3 +801,7 @@
     gap: 0.95em;
   }
 }
+.footerSuccessMsg {
+  margin-top: 10px;
+  color: white;
+}
