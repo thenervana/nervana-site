@@ -48,7 +48,7 @@ export default function FooterNewsletter() {
           </span>
         </button>
       </form>
-      {status === 'success' && <p style={{ marginTop: '10px', color: 'green' }}>You're subscribed!</p>}
+      {status === 'success' && <p style={{ marginTop: '10px', color: 'white' }}>You're subscribed!</p>}
       {status === 'error' && <p style={{ marginTop: '10px', color: 'red' }}>Something went wrong. Try again.</p>}
     </div>
   );
