@@ -166,15 +166,20 @@ export default function Home() {
               </span>
               <span className={styles.cursor}></span>
             </div>
-            <h1 className={styles.heroHeading} style={{ fontSize: "3.2rem", textAlign: "center" }}>
-              From Invisible to In-Demand
-            </h1>
-            <p className={styles.heroSubtext} style={{ fontSize: "2rem", textAlign: "center" }}>
+            <h1 className={styles.heroHeading} style={{ fontSize: "3rem", textAlign: "center" }}>
               India's First AI Powered Personal Branding Company
+            </h1>
+            <p className={styles.heroSubtext} style={{ fontSize: "2.5rem", textAlign: "center" }}>
+              From <strong>Invisible</strong> to <strong>In-Demand</strong> in just <strong>90 Mins</strong>
             </p>
-            <Link href="https://calendly.com/jay-thenervana/call" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnPrimaryMain}`}>
-              Book a Discovery Call
-            </Link>
+            <Link 
+             href="https://calendly.com/jay-thenervana/call"
+             target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.btn} ${styles.btnPrimaryMain}`}
+            >
+  Book a Discovery Call
+</Link>
           </div>
         </div>
       </div>

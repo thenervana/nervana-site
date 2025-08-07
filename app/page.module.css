@@ -16,7 +16,6 @@
   border-radius: 8px;
   font-weight: 600;
 }
-
 .bannerTextBlock {
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 0 1rem;
 }
 
@@ -46,12 +45,13 @@
 }
 
 .btnPrimaryMain {
+  font-size: 1.5rem;
   background-color: #00562c;
   color: #f9f4ea;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  border: 2px solid transparent;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1.5px solid transparent;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -187,7 +187,7 @@
 
 .bannerText {
   color: #fff;
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 800;
   margin-top: -4rem;
   margin-bottom: 0.7rem;
@@ -198,7 +198,7 @@
 }
 
 .jackpotEffect {
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 800;
   color: #fff;
   text-shadow: 0 3px 32px rgba(22, 25, 41, 0.45), 0 1px 1px #0089ff40;
@@ -334,7 +334,7 @@
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
