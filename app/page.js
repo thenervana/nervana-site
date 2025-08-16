@@ -21,6 +21,7 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (currentIndex >= chatSequence.length) return;
@@ -136,19 +137,50 @@ export default function Home() {
     setIsMobileMenuOpen(false);
   };
 
+  // Updated newsletter submission to work with your Google Apps Script backend
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
+
     if (!email) {
       setNewsletterStatus('Please enter your email');
       return;
     }
-    
-    // Add your newsletter subscription logic here
-    setNewsletterStatus('Thanks for subscribing!');
-    setEmail('');
-    
-    // Clear status after 3 seconds
-    setTimeout(() => setNewsletterStatus(''), 3000);
+
+    if (!email.includes('@')) {
+      setNewsletterStatus('Please enter a valid email');
+      return;
+    }
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setNewsletterStatus('Subscribing...');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setNewsletterStatus('Subscribed successfully! 🎉');
+        setEmail('');
+      } else {
+        setNewsletterStatus(data.message || 'Failed to subscribe. Please try again.');
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setNewsletterStatus('Network error. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+      // Clear status after 5 seconds
+      setTimeout(() => setNewsletterStatus(''), 5000);
+    }
   };
 
   return (
@@ -501,7 +533,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Newsletter Section */}
+            {/* Newsletter Section with Google Apps Script Integration */}
             <div className={styles.footerNewsletter}>
               <div className={styles.footerNewsletterLabel}>
                 Stay updated with our latest insights
@@ -514,9 +546,14 @@ export default function Home() {
                   onChange={(e) => setEmail(e.target.value)}
                   className={styles.footerInput}
                   required
+                  disabled={isSubmitting}
                 />
-                <button type="submit" className={styles.footerBtn}>
-                  Submit
+                <button 
+                  type="submit" 
+                  className={styles.footerBtn}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
               </form>
               {newsletterStatus && (
